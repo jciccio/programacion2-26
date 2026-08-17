@@ -3,7 +3,7 @@ Contenido del curso CI-0112
 
 | Tamaño del repositorio        | Lenguaje utilizado|
 | ------------- | :-------------:| 
-| ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/jciccio/programacion2-25.svg?style=for-the-badge)      |   Java|
+| ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/jciccio/programacion2-26.svg?style=for-the-badge)      |   Java|
 
 ## Material visto en clase
 Ejemplos tomados del código fuente generado en las distintas lecciones.

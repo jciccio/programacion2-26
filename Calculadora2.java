@@ -1,5 +1,5 @@
 public class Calculadora2{
-	public double sumar(double x, double y, double z){
+	public int sumar(int x, int y, int z){
 		return x+y+z;
 	}
 

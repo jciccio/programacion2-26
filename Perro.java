@@ -3,7 +3,9 @@ public class Perro{
 	private String nombre;
 	private String estado;
 
-
+	public void setNombre(String nombreAUsar){
+		this.nombre = nombreAUsar;
+	}
 
 	// Constructor de clase
 	// Es un método que se ejecuta sólo 1 vez

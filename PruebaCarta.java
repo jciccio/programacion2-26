@@ -1,7 +1,7 @@
 public class PruebaCarta{
 	public static void main (String [] args){
 		Carta carta1 = new Carta();
-		carta1.setNumero(10);
+		carta1.setNumero(11);
 		carta1.setPalo("Diamantes");
 		String contenidoC1 = carta1.obtenerValoresCarta();
 		System.out.println(contenidoC1);

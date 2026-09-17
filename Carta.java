@@ -25,8 +25,8 @@ public class Carta{
 		return palo;
 	}
 
-	public String obtenerValoresCarta(){
-		String contenidoDeLaCarta =  convertirALetrasSwitch() +  " de " + palo;
+	public String toString(){
+		String contenidoDeLaCarta =  convertirALetrasSwitch() +  " de " + palo ;
 		return contenidoDeLaCarta;
 	}
 

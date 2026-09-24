@@ -23,6 +23,22 @@ public class AlgoritmosOrdenamiento{
 		return arreglo;
 	}
 
+	public int[] ordenarBurbuja(int[] arregloParametro){
+		int [] arreglo = clonarArreglo(arregloParametro);
+		for(int i = 0; i < arreglo.length; i++){
+			for(int j = arreglo.length-1; j > i; j--){
+				if(arreglo[j-1] > arreglo[j]){
+					// Intercambio elementos
+					int temporal = arreglo[j];
+					arreglo[j] = arreglo[j-1];
+					arreglo[j-1] = temporal;
+				}
+			}
+		}
+		return arreglo;
+	}
+
+
 
 	public static void main (String [] args){
 		int [] arreglo1 = {5,3,6,7,9,1,0,8,8,8,8};

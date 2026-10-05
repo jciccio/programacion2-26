@@ -6,7 +6,7 @@ public class ObraDeArtePristine {
   
   private static final int ANCHO = 1200;
   private static final int ALTO = 900;
-  private static final int MIN = 2;
+  private static final int MIN = 0;
   private static final int MAX = 6;
   private static final int SUBMATRIZ = 100;
   

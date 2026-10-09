@@ -1,0 +1,24 @@
+# ==========================================
+# DATOS DE COMBATE Y FLOTAS: NIVEL 1
+# ==========================================
+# PARAMETROS DEL SECTOR
+RADIACION_MAXIMA 50
+DANO_RADIACION 15
+# FLOTA ALIADA (JUGADOR)
+CANTIDAD_ALIADAS 3
+ESCUDO_ALIADO 100
+ENERGIA_ALIADA 50
+# ARMAS DEL JUGADOR: ARMA <nombre> <tipoPatron:1-5> <alcance> <dano> <consumoEnergia> <municionMax>
+ARMA Laser_Lineal 1 3 25 2 10
+ARMA Pulso_EMP 2 1 20 4 6
+ARMA Misil_Teledirigido 3 4 35 3 4
+ARMA Metralla_Frontal 4 2 30 3 6
+ARMA Bomba_Cuantica 5 2 45 5 2
+# ENEMIGOS
+# FORMATO: ENEMIGO <id_en_mapa> <nombre> <escudo> <energia> <orientacion> <cantArmas>
+ENEMIGO E1 Dron_Centinela 60 40 O 2
+ARMA Laser_Ligero 1 3 15 2 8
+ARMA Pulso_Corto 2 1 10 3 4
+ENEMIGO E2 Interceptor_Kryll 80 50 N 2
+ARMA Metralla_Enemiga 4 2 25 3 5
+ARMA Misil_Subespacial 3 4 30 4 3

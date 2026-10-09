@@ -1,8 +1,6 @@
 public class Mazo{
 
 	private Carta [] cartas;
-
-
 	public Mazo(){
 		cartas = new Carta[52];
 		int contador = 0;

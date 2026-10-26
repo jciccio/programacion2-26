@@ -45,7 +45,7 @@ public class LectorDeArchivos{
 	}
 
 	public static void main (String [] args){
-		LectorDeArchivos lector = new LectorDeArchivos("Mazo.java");
+		LectorDeArchivos lector = new LectorDeArchivos("html/class_carta_doxygen.html");
 		String linea = lector.leerLinea();
 		System.out.println(linea);
 		linea = lector.leerLinea();
@@ -54,5 +54,6 @@ public class LectorDeArchivos{
 		System.out.println(linea);
 		linea = lector.leerLinea();
 		System.out.println(linea);
+		lector.cerrar();
 	}
 }

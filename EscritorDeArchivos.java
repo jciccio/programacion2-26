@@ -50,8 +50,14 @@ public class EscritorDeArchivos{
 	}
 
 	public static void main (String [] args){
-		EscritorDeArchivos e1 = new EscritorDeArchivos("PruebaEscritura");
-		e1.escribir("Esto es una prueba.\n");
+		EscritorDeArchivos e1 = new EscritorDeArchivos("archivoExcel.csv");
+
+		String hilera1 = "Provincia;canton;distrito\n";
+		String [] partes = hilera1.split(";");
+
+		e1.escribir(hilera1);
+		e1.escribir("San Jose;Montes de Oca;San Rafael\n");
+		e1.escribir("San Jose;Curridabat;Curridabat\n");
 		e1.cerrar();
 	}
 }

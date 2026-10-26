@@ -55,6 +55,11 @@ public class Hileras{
 			hileraSinEspacios += partes[i];
 		}
 		System.out.println(hileraSinEspacios);
+
+
+		String miTexto = "Hola mundo";
+		char letra = miTexto.charAt(0);
+		System.out.println(letra);
 	}
 
 

@@ -54,6 +54,29 @@ public class Recursividad{
 		return resultado;
 	}
 
+	private void imprimir(int [] arreglo, int contador){
+		if(contador < arreglo.length){
+			imprimir(arreglo, contador+1);
+			System.out.print(arreglo[contador]+" ");
+		}
+	}
+
+	public void imprimir(int [] arreglo){
+		imprimir(arreglo, 0);
+		System.out.println();
+	}
+
+	public String invertirHilera(String hilera, int contador){
+		String hileraInvertida = "";
+		if(contador < hilera.length()){
+			invertirHilera(hilera, contador+1);	
+			hileraInvertida = hilera.charAt(contador);
+			System.out.print(hilera.charAt(contador));
+		}
+		
+		return hileraInvertida;
+	}
+
 	public static void main (String [] args){
 		Recursividad rec = new Recursividad();
 		int resultado = rec.calcularSumatoria(5);
@@ -61,6 +84,11 @@ public class Recursividad{
 
 		System.out.println("Fibonacci de 5 es: " + rec.calcularFibonacci(20));
 		System.out.println("La cantidad de llamados es: " + rec.getContador());
+	
+		int [] arreglo = {1,2,3,4,5,6,7,8,9,10};
+		rec.imprimir(arreglo);
+
+		System.out.println(rec.invertirHilera("Hola",0));
 	}
 
 }

@@ -380,3 +380,61 @@ public static void main (String[] args){
       }
     ...
 ```
+
+### Matrices
+
+Ejemplos vistos en clase:
+
+Declaración, inicialización y asignación
+```java
+  int  [][] matriz1 = new int [3][5];
+  // 0 0 0 0 0
+  // 0 0 0 0 0 
+  // 0 0 0 0 0 
+
+  matriz1[0][2] = 12;
+  // 0 0 12 0 0
+  // 0 0 0  0 0 
+  // 0 0 0  0 0 
+```
+
+Declaración e inicialización por extensión:
+
+```java
+int [][]matriz2 = {
+  {1,2},
+  {3,4}, 
+  {5,6}
+};
+```
+
+Declaración línea por línea
+```java
+  int [][] matriz3 = new int [5][];
+  matriz3[0] = new int [4];
+  matriz3[1] = new int [8];
+  matriz3[2] = new int [5];
+  matriz3[3] = new int [6];
+  matriz3[4] = new int [2];
+```
+
+Impresión:
+
+```java
+public void imprimir(int [][] matriz){
+  for (int  f = 0 ; f < matriz.length ; f++){
+    for (int c = 0 ; matriz[f] != null && c < matriz[f].length; c++){
+      System.out.print(matriz[f][c] + "\t");
+    }
+    System.out.println();
+  }
+}
+```
+
+### Valores por referencia y copia
+
+  Al invocar un método, las variables de tipo primitivo, se invocan por copia.
+  Los objetos (arreglos, clases, etc.) se envían como una referencia a su ubicación en
+  memoria, por tanto si se modifican dentro del método, se modificará las variables que apunten a la misma referencia.
+
+

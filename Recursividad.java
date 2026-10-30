@@ -68,27 +68,59 @@ public class Recursividad{
 
 	public String invertirHilera(String hilera, int contador){
 		String hileraInvertida = "";
-		if(contador < hilera.length()){
-			invertirHilera(hilera, contador+1);	
-			hileraInvertida = hilera.charAt(contador);
-			System.out.print(hilera.charAt(contador));
+		if(contador < hilera.length()){			
+			hileraInvertida = invertirHilera(hilera, contador+1);	
+			hileraInvertida += hilera.charAt(contador);
 		}
 		
 		return hileraInvertida;
 	}
 
+	public int buscarMenor (int [] arreglo){
+		int menor = arreglo[0];
+		for(int i = 1 ; i < arreglo.length; i++){
+			if(menor > arreglo[i]){
+				menor = arreglo[i];
+			}
+		}
+		return menor;
+	}
+
+	public int buscarMenor(int [] arreglo, int indice){
+		int resultado = 0;
+		if(indice == arreglo.length-1){
+			System.out.println("Caso trivial: " + arreglo[indice]);
+			resultado = arreglo[indice];
+		}
+		else if(indice < arreglo.length-1){
+			System.out.println("Indice: " + indice + " contenido: " + arreglo[indice]);
+			resultado = buscarMenor(arreglo, indice+1);
+			if(resultado > arreglo[indice]){
+				resultado = arreglo[indice];
+			}
+			System.out.println("Resultado Indice: " + indice +" " + resultado);
+		}
+
+		return resultado;
+	}
+
 	public static void main (String [] args){
 		Recursividad rec = new Recursividad();
-		int resultado = rec.calcularSumatoria(5);
-		System.out.println("La sumatoria de 5 es: " + resultado);
+		//int resultado = rec.calcularSumatoria(5);
+		//System.out.println("La sumatoria de 5 es: " + resultado);
 
-		System.out.println("Fibonacci de 5 es: " + rec.calcularFibonacci(20));
-		System.out.println("La cantidad de llamados es: " + rec.getContador());
+		//System.out.println("Fibonacci de 5 es: " + rec.calcularFibonacci(20));
+		//System.out.println("La cantidad de llamados es: " + rec.getContador());
 	
-		int [] arreglo = {1,2,3,4,5,6,7,8,9,10};
-		rec.imprimir(arreglo);
+		int [] arreglo = {1,2,-9,3,4,5,6,7,8,10,-1};
+		//rec.imprimir(arreglo);
 
-		System.out.println(rec.invertirHilera("Hola",0));
+		//System.out.println(rec.invertirHilera("Hola",0));
+
+
+		int menor = rec.buscarMenor(arreglo,0);
+		String valor = rec.invertirHilera("Hola",0);
+		System.out.println(valor);
 	}
 
 }

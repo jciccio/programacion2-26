@@ -69,8 +69,8 @@ public class Recursividad{
 	public String invertirHilera(String hilera, int contador){
 		String hileraInvertida = "";
 		if(contador < hilera.length()){			
-			hileraInvertida = invertirHilera(hilera, contador+1);	
-			hileraInvertida += hilera.charAt(contador);
+			hileraInvertida =  invertirHilera(hilera, contador+1) + hilera.charAt(contador);	
+
 		}
 		
 		return hileraInvertida;

@@ -87,6 +87,97 @@ public class ArbolBinario {
 	 	return buscado;
 	 }
 
+	 private Nodo buscarMenor(Nodo nodo){
+	 	while(nodo.hijoIzq != null){
+	 		nodo = nodo.hijoIzq;
+	 	}
+	 	return nodo;
+	 }
+
+	 private Nodo borrar (int elemento, Nodo nodo){
+	 	Nodo retorno = null;
+	 	if(nodo != null){
+	 		if(nodo.elemento > elemento){
+	 			// Nos movemos recursivamente hacia la izquierda
+	 			nodo.hijoIzq = borrar(elemento, nodo.hijoIzq);
+	 		}
+	 		else if(nodo.elemento < elemento){
+	 			// Nos movemos recursivamente hacia la derecha
+	 			nodo.hijoDer = borrar(elemento, nodo.hijoDer);
+	 		}
+	 		else{
+	 			// Encontramos el elemento a borrar :)
+	 			if(nodo.hijoIzq == null){
+	 				// Tiene 0 o 1 hijo
+	 				nodo = nodo.hijoDer;
+	 			}
+	 			else if (nodo.hijoDer == null){
+	 				// Tiene 0 o 1 hijo
+	 				nodo = nodo.hijoIzq;
+	 			}
+	 			else{
+	 				// Tiene 2 hijos
+	 				Nodo menor = buscarMenor(nodo.hijoDer);
+	 				nodo.elemento = menor.elemento;
+	 				nodo.hijoDer = borrar(nodo.elemento, nodo.hijoDer);
+	 			}
+	 		}
+	 		retorno = nodo;
+	 	}
+
+	 	return retorno;
+	 }
+
+	 public boolean borrar (int elemento){
+	 	return this.borrar(elemento, raiz) != null;
+	 }
+
+
+	 public int length(){
+	 	return length(raiz);
+	 }
+
+	 
+
+	  private int length(Nodo nodo, int contador){
+	 	if(nodo != null){
+	 		contador += length(nodo.hijoIzq, contador+1);
+	 		contador += length(nodo.hijoDer, contador);
+	 	}
+	 	return contador;
+	 }
+
+	 private int length(Nodo nodo){
+	 	int contador = 0;
+
+	 	if(nodo != null){
+	 		contador += length(nodo.hijoIzq);
+	 		contador += length(nodo.hijoDer);
+	 		contador++;
+	 	}
+	 	return contador;
+	 }
+	 
+	 public int getProfundidad(){
+	  	return getProfundidad(raiz);
+	 }
+	 
+	 private int getProfundidad(Nodo nodo){
+	 	int profundidadIzq = 0;
+	 	int profundidadDer  = 0;
+	 	if(nodo != null){
+	 		if(nodo.hijoIzq != null){
+	 			profundidadIzq = getProfundidad(nodo.hijoIzq);
+	 		}
+	 		if(nodo.hijoDer != null){
+	 			profundidadDer = getProfundidad(nodo.hijoDer);
+	 		}
+	 	}
+	 	return ((profundidadIzq > profundidadDer) ? 
+	 		profundidadIzq : profundidadDer) + 1;
+	 }
+
+
 
 	 public static void main (String [] args){
 	 	ArbolBinario ab = new ArbolBinario();

@@ -64,8 +64,16 @@ public class ListaSimplementeEnlazada{
 		return actual;
 	}
 
-	public int getElemento(int posicion){
-		return buscarPosicion(posicion).elemento;
+	public int getElemento(int posicion) throws ListaVaciaException {
+		Nodo resultado = buscarPosicion(posicion);
+		int retorno = 0;
+		if(resultado != null){
+			retorno = resultado.elemento;
+		}
+		else{
+			throw new ListaVaciaException("La lista se encuentra vacía");
+		}
+		return retorno;
 	}
 
 	public boolean agregar(int posicion, int elemento){

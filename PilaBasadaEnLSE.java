@@ -23,7 +23,7 @@ public class PilaBasadaEnLSE{
 		catch(ListaVaciaException e){
 			System.err.println(e);
 		}	
-		return resultado;
+		return result
 	}
 
 	public boolean empty(){

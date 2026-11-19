@@ -4,7 +4,8 @@ public class Persona{
 	private String nombre;
 
 	public Persona(String nombre, int edad){
-
+		this.nombre = nombre;
+		this.edad = edad;
 	}
 
 	public int getEdad(){
@@ -13,5 +14,9 @@ public class Persona{
 
 	public String getNombre(){
 		return nombre;
+	}
+
+	public String toString(){
+		return nombre + " " + edad ;
 	}
 }
